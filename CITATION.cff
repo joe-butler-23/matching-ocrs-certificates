@@ -19,3 +19,53 @@ keywords:
   - "exact-rational-arithmetic"
   - "computer-assisted-proof"
 abstract: "Machine-checkable certificates and self-contained proofs establishing strict separations on both sides of (3 - sqrt(5))/2 for oblivious adversarial-order edge-arrival matching OCRSs on simple graphs: (1) a 1-parameter strongly-online global-coin Continuous-Staircase OCRS achieving >= 0.382673618862 on all simple finite forests (arbitrary non-vanishing edge weights) and >= 0.382673618862 - o(1) on all simple vanishing graphs (with a 1-coin 2-branch corollary >= 0.382309325242 and a strictly feasible counterexample to arXiv:2406.14506 v3 lem:tree_reduction_game_part_1); (2) a zero-Azuma cubic-potential EMA cascade certifying general non-bipartite selectability <= 0.3786732126 (plus an 8-parameter Paley 2-coset certificate verified in 71 pure-rational boxes and exact-Fraction duals for K6 <= 0.389536778 and K8 <= 0.388559368); and (3) a 2-family vanishing bipartite simple-graph family certifying <= 0.3860271555 as max_e x_e -> 0^+."
+references:
+  - type: article
+    title: "Online Contention Resolution for Matchings with Vanishing Edge Values"
+    authors:
+      - family-names: "Ma"
+        given-names: "Will"
+      - family-names: "MacRury"
+        given-names: "Calum"
+      - family-names: "Nuti"
+        given-names: "Pranav"
+    year: 2026
+    doi: "10.48550/arXiv.2406.14506"
+    url: "https://arxiv.org/abs/2406.14506"
+  - type: article
+    title: "Stationary Online Contention Resolution Schemes"
+    authors:
+      - family-names: "Aminian"
+      - family-names: "Niazadeh"
+        given-names: "Rad"
+      - family-names: "Nuti"
+        given-names: "Pranav"
+    year: 2026
+    doi: "10.48550/arXiv.2603.21532"
+    url: "https://arxiv.org/abs/2603.21532"
+  - type: article
+    title: "On (Random-Order) Online Contention Resolution Schemes for the Matching Polytope of (Bipartite) Graphs"
+    authors:
+      - family-names: "MacRury"
+        given-names: "Calum"
+      - family-names: "Ma"
+        given-names: "Will"
+      - family-names: "Grammel"
+        given-names: "Nathaniel"
+    year: 2023
+    doi: "10.48550/arXiv.2305.08999"
+    url: "https://arxiv.org/abs/2305.08999"
+  - type: article
+    title: "Online Stochastic Max-Weight Matching: Prophet Inequality for Vertex and Edge Arrival Models"
+    authors:
+      - family-names: "Ezra"
+        given-names: "Tomer"
+      - family-names: "Feldman"
+        given-names: "Michal"
+      - family-names: "Gravin"
+        given-names: "Nick"
+      - family-names: "Tang"
+        given-names: "Zhihao Gavin"
+    year: 2020
+    doi: "10.48550/arXiv.2002.11672"
+    url: "https://arxiv.org/abs/2002.11672"

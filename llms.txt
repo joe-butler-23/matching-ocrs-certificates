@@ -1,0 +1,52 @@
+# Matching OCRS Separation Certificates (Straddling (3 - sqrt(5))/2)
+
+> Machine-checkable 100-digit interval-arithmetic (`mpmath.iv`) and exact-rational (`fractions.Fraction`) certificates establishing strict separations on both sides of `alpha* = (3 - sqrt(5))/2 = 0.381966011250...` for oblivious adversarial-order edge-arrival Online Contention Resolution Schemes (OCRSs) on the matching polytope of simple graphs.
+
+- Repository: https://github.com/joe-butler-23/matching-ocrs-certificates
+- Author: Joe Butler (2026)
+- License: MIT
+
+## Headline Certified Separation Chain (Plain-ASCII & Searchable Summary)
+
+`c*_general <= 0.3786732126 < (3 - sqrt(5))/2 = 0.3819660113 < 0.3826736189 <= c*_trees, c*_vanishing <= 0.3860271555`
+
+Refutes both halves of the matching OCRS conjecture of Ma, MacRury, and Nuti (`arXiv:2406.14506` v3, Oct 2026; quoted in Aminian, Niazadeh, and Nuti `arXiv:2603.21532`, Oct 2026):
+
+1. **Track 1 — Strongly-Online Global-Coin Lower Bound (`vanishing-lower-bound/`):**
+   - 1-parameter strongly-online Continuous-Staircase OCRS (`c_1 = 49/125 = 0.392`, `tau = 3375/3724`, `B = 349/3724`) achieves exact closed-form selectability `c_exact = 0.382673618863030223 > 0.382673618862 > (3 - sqrt(5))/2` on **all simple finite forests** (arbitrary non-vanishing edge weights `x`) and `0.382673618862 - o(1)` on **all simple vanishing graphs** (general and bipartite) against an oblivious arrival-order adversary (`thm:vanishing_to_local` of `arXiv:2406.14506`).
+   - 1-coin 2-branch corollary (`omega in {0, 1}`): `>= 0.382309325242 > (3 - sqrt(5))/2`; 65-branch rational corollary: `>= 0.382661888422`.
+   - Includes a 6-line disagreement-coupling proof on `ell`-locally-tree-like induced subgraphs (`beta_0 = (125/76) ln(125/76) = 0.81838881 < 1`), a strictly feasible 7-edge counterexample (`-8.40936e-5 < 0`) to `arXiv:2406.14506` v3 `lem:tree_reduction_game_part_1` (L1572), and explicit `< alpha*` necessity separations for parallel-edge multigraphs (`0.330779`) and adaptive arrival-order adversaries (`0.360869`, contrasting with stationary S-OCRS `= alpha*` in `arXiv:2603.21532`).
+
+2. **Track 2 — General Non-Bipartite Upper Bounds & Pure-Finite `K_6`/`K_8` (`general-upper-bound/`):**
+   - Zero-Azuma cubic-potential EMA recursive cascade on finite simple triangle-bridge pyramids (`x` in `P_match(G)` via top-down integer matchings):
+     - `T_2 = 40` (`q = 10^13 + 313`): `c*_general <= 0.378673212573978` (monotone 100-dps) / `<= 0.378685` (raw non-monotone 100-dps), closing 97.0% of the hedging gap above the `0.3786435369` single-layer deterministic wall.
+     - `T_2 = 1` Paley (`q = 100,000,007 == 3 mod 4`, 8 free dual numerators): `<= 0.3796246005` (100-dps), `<= 0.379999139 < 0.380` in **150** pure-rational boxes, and `<= 0.380980537 < 381/1000 < (3 - sqrt(5))/2` in **71** pure-rational boxes (zero `C`, zero `exp`, zero `sqrt`, complete 9-prime Pratt tree down to `2`).
+   - Zero-expander pure-`Fraction` `2^n` Bellman duals on fixed arrival orders (`eps = 10^-9`, all 26 & 120 Blossom odd-set constraints verified): `K_6 <= 0.389536778` (6 vertices) and `K_8 <= 0.388559368` (8 vertices), both strictly below `arXiv:2406.14506`'s exact asymptotic general-vanishing bound `beta = 0.389538053343`.
+
+3. **Track 3 — Vanishing Bipartite Upper Bound (`bipartite-upper-bound/`):**
+   - 2-family Birkhoff 2-colored bipartite simple graph family (`T_2 = 40`, `q = 10^13 + 313`, `max_e x_e = 10^-12` extending monotonically as `delta -> 0^+`): `c*_bipartite,vanishing <= 0.3860271554305342`, cutting 63.0% of the gap between `(3 - sqrt(5))/2` and `gamma = 0.3929353185` (`arXiv:2406.14506` Theorem 1.2(1)).
+
+## Related Papers Addressed
+
+- Ma, MacRury, and Nuti (2024/2026), `arXiv:2406.14506` (`10.48550/arXiv.2406.14506`)
+- Aminian, Niazadeh, and Nuti (2026), `arXiv:2603.21532` (`10.48550/arXiv.2603.21532`)
+- MacRury, Ma, and Grammel (2023/2025), `arXiv:2305.08999` (`10.48550/arXiv.2305.08999`)
+- Ezra, Feldman, Gravin, and Tang (2020/2022), `arXiv:2002.11672` (`10.48550/arXiv.2002.11672`)
+
+## Fast Autonomous Verification Commands
+
+```bash
+uv run --with mpmath --with numpy --with scipy python3 -O verify_all.py --fast     # ~8 s smoke check + Track 1 + 71-box Paley + K6/K8
+uv run --with mpmath python3 -O verify_all.py --verifiers-only                     # ~1.5 min core verifiers only (zero numpy/scipy)
+uv run --with mpmath --with numpy --with scipy python3 -O verify_all.py            # ~8 min full suite + 75 forgery checks + 14 fuzzer suites
+```
+
+## Key Files
+
+- [README.md](README.md): Overview, certified tables, necessary hypotheses, and prior-work comparison.
+- [SPEC.md](SPEC.md): Self-contained definitions and proofs for Tracks 1-3, L1572 counterexample, and `0.3786435` wall obstructions.
+- [vanishing-lower-bound/verify_vanishing_lb.py](vanishing-lower-bound/verify_vanishing_lb.py): Track 1 verifier.
+- [general-upper-bound/verify_l3_ema_ocrs.py](general-upper-bound/verify_l3_ema_ocrs.py) & [verify_l3_lean4_paley_rat.py](general-upper-bound/verify_l3_lean4_paley_rat.py): Track 2 100-dps and pure-rational verifiers.
+- [bipartite-upper-bound/verify_ocrs.py](bipartite-upper-bound/verify_ocrs.py): Track 3 vanishing bipartite verifier.
+- [verify_all.py](verify_all.py): Top-level reproducible runner (`0` `assert` statements across all 13 `.py` files).
+- [CITATION.cff](CITATION.cff), [SHA256SUMS](SHA256SUMS), [SHA256SUMS.ots](SHA256SUMS.ots): Citation metadata, SHA-256 digests, and OpenTimestamps Bitcoin-calendar receipt.
