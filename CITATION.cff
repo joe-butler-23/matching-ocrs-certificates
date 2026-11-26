@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use these certificates, verifiers, or proofs, please cite this repository."
+title: "Matching OCRS Separation Certificates: General Non-Bipartite Upper Bounds (< 0.37868), Vanishing & Tree Global-Coin Lower Bounds (> 0.38267), and Vanishing Bipartite Upper Bounds (<= 0.38603)"
+type: software
+version: "1.0.0"
+date-released: "2026-11-26"
+license: MIT
+repository-code: "https://github.com/joe-butler-23/matching-ocrs-certificates"
+authors:
+  - family-names: "Butler"
+    given-names: "Joe"
+keywords:
+  - "online-contention-resolution-schemes"
+  - "ocrs"
+  - "online-matching"
+  - "matching-polytope"
+  - "interval-arithmetic"
+  - "paley-graphs"
+  - "exact-rational-arithmetic"
+  - "computer-assisted-proof"
+abstract: "Machine-checkable certificates and self-contained proofs establishing strict separations on both sides of (3 - sqrt(5))/2 for oblivious adversarial-order edge-arrival matching OCRSs on simple graphs: (1) a 1-parameter strongly-online global-coin Continuous-Staircase OCRS achieving >= 0.382673618862 on all simple finite forests (arbitrary non-vanishing edge weights) and >= 0.382673618862 - o(1) on all simple vanishing graphs (with a 1-coin 2-branch corollary >= 0.382309325242 and a strictly feasible counterexample to arXiv:2406.14506 v3 lem:tree_reduction_game_part_1); (2) a zero-Azuma cubic-potential EMA cascade certifying general non-bipartite selectability <= 0.3786732126 (plus an 8-parameter Paley 2-coset certificate verified in 71 pure-rational boxes and exact-Fraction duals for K6 <= 0.389536778 and K8 <= 0.388559368); and (3) a 2-family vanishing bipartite simple-graph family certifying <= 0.3860271555 as max_e x_e -> 0^+."

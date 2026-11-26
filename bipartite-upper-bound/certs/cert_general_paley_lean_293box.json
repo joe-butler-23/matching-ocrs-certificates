@@ -1,0 +1,22 @@
+{
+  "schema": "ocrs.r2_canonical.v1",
+  "mode": "general_bridged_atom",
+  "T2": 1,
+  "q": 2000003,
+  "K": 10000,
+  "eps_num": 1,
+  "eps_den": 10000,
+  "D_int": 200003,
+  "raw_ints": {
+    "w0": 12250,
+    "wa": 23976,
+    "wb": 23099,
+    "wA": [24081],
+    "wB": [28271],
+    "aA": 8509,
+    "aB": 4110,
+    "wdir": 25419
+  },
+  "claimed_ub": "0.38069371",
+  "pure_q_claimed_ub": "0.38099936"
+}

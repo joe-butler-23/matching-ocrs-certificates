@@ -1,0 +1,25 @@
+{
+  "schema": "ocrs.r2_canonical.v1",
+  "mode": "general_bridged_fused",
+  "T2": 1,
+  "q": 2000003,
+  "K": 10000,
+  "eps1_num": 1,
+  "eps1_den": 10000,
+  "eps2_num": 1,
+  "eps2_den": 10000,
+  "D_int": 19999,
+  "raw_ints": {
+    "w0": 1225,
+    "wa": 2419,
+    "wb": 2330,
+    "wA": [2390],
+    "wB": [2804],
+    "aA": 813,
+    "aB": 377,
+    "u_wD": 68,
+    "wdir": 2545
+  },
+  "claimed_ub": "0.38063193",
+  "pure_q_claimed_ub": "0.38099793"
+}
